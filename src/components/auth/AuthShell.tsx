@@ -1,14 +1,14 @@
-import * as React from "react";
-import Link from "next/link";
-import { ThemeToggle } from "@/components/theme/ThemeToggle";
-import { Separator } from "@/components/ui/separator";
+import * as React from 'react'
+import Link from 'next/link'
+import { ThemeToggle } from '@/components/theme/ThemeToggle'
+import { Separator } from '@/components/ui/separator'
 
 type Props = {
-  title: string;
-  subtitle?: string;
-  children: React.ReactNode;
-  footer?: React.ReactNode;
-};
+  title: string
+  subtitle?: string
+  children: React.ReactNode
+  footer?: React.ReactNode
+}
 
 export function AuthShell({ title, subtitle, children, footer }: Props) {
   return (
@@ -24,7 +24,9 @@ export function AuthShell({ title, subtitle, children, footer }: Props) {
         <section className="hidden md:flex md:flex-col md:justify-center">
           <h1 className="text-3xl font-semibold tracking-tight">{title}</h1>
           {subtitle ? (
-            <p className="mt-2 max-w-md text-sm text-muted-foreground">{subtitle}</p>
+            <p className="mt-2 max-w-md text-sm text-muted-foreground">
+              {subtitle}
+            </p>
           ) : null}
 
           <div className="mt-6 rounded-2xl border bg-card p-6 shadow-sm">
@@ -40,16 +42,20 @@ export function AuthShell({ title, subtitle, children, footer }: Props) {
         </section>
 
         <section className="flex items-center justify-center">
-          <div className="w-full max-w-md">{children}</div>
+          <div className="w-full max-w-md animate-in fade-in zoom-in-95 duration-300">
+            {children}
+          </div>
         </section>
 
         {footer ? (
           <div className="md:col-span-2">
             <Separator className="my-6" />
-            <div className="text-center text-xs text-muted-foreground">{footer}</div>
+            <div className="text-center text-xs text-muted-foreground">
+              {footer}
+            </div>
           </div>
         ) : null}
       </main>
     </div>
-  );
+  )
 }

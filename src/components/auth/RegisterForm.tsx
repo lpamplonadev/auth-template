@@ -62,19 +62,19 @@ export function RegisterForm() {
           <div className="grid gap-2">
             <Label htmlFor="name">Nome</Label>
             <Input id="name" placeholder="Seu nome" autoComplete="name" {...register("name")} />
-            {errors.name ? <p className="text-xs text-destructive">{errors.name.message}</p> : null}
+            {errors.name ? <p className="text-xs text-destructive animate-in fade-in slide-in-from-top-1 duration-200">{errors.name.message}</p> : null}
           </div>
 
           <div className="grid gap-2">
             <Label htmlFor="email">Email</Label>
             <Input id="email" placeholder="voce@exemplo.com" autoComplete="email" {...register("email")} />
-            {errors.email ? <p className="text-xs text-destructive">{errors.email.message}</p> : null}
+            {errors.email ? <p className="text-xs text-destructive animate-in fade-in slide-in-from-top-1 duration-200">{errors.email.message}</p> : null}
           </div>
 
           <div className="grid gap-2">
             <Label htmlFor="password">Senha</Label>
             <Input id="password" type="password" placeholder="••••••••" autoComplete="new-password" {...register("password")} />
-            {errors.password ? <p className="text-xs text-destructive">{errors.password.message}</p> : null}
+            {errors.password ? <p className="text-xs text-destructive animate-in fade-in slide-in-from-top-1 duration-200">{errors.password.message}</p> : null}
           </div>
 
           <div className="grid gap-2">
@@ -87,7 +87,7 @@ export function RegisterForm() {
               {...register("confirmPassword")}
             />
             {errors.confirmPassword ? (
-              <p className="text-xs text-destructive">{errors.confirmPassword.message}</p>
+              <p className="text-xs text-destructive animate-in fade-in slide-in-from-top-1 duration-200">{errors.confirmPassword.message}</p>
             ) : null}
           </div>
 
