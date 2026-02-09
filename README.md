@@ -1,36 +1,174 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Auth Template (Next.js) — Login / Register / Forgot
 
-## Getting Started
+Template **mobile-first** de autenticação com **Next.js (App Router)**, **Tailwind** e **shadcn/ui**.  
+Feito para você começar projetos rápido com UI consistente, validação pronta e estrutura organizada.
 
-First, run the development server:
+> ✅ Ideal para virar produto (Starter/Pro), boilerplate interno ou base de SaaS.
 
+---
+
+## ✨ Features
+
+- ✅ Fluxo completo de auth UI: **Login**, **Cadastro**, **Esqueci a senha**
+- ✅ **Validação com Zod** + **react-hook-form**
+- ✅ UI com **shadcn/ui** (Card, Button, Input, etc.)
+- ✅ **Dark mode** (next-themes) + toggle
+- ✅ Server Actions (mock) para simular login/cadastro/reset
+- ✅ Código limpo e fácil de estender (auth real, dashboard, onboarding…)
+
+---
+
+## 🌿 Branches
+
+Este repositório tem duas versões do template:
+
+### `main` — Core (cru / minimal)
+- Sem dependências extras de animação
+- Mais simples, direto ao ponto e com menos “mágica”
+- Perfeito como base estável para qualquer projeto
+
+### `pro-motion` — Motion Pack (animações discretas)
+- Inclui `tw-animate-css`
+- Adiciona animações leves e profissionais (ex: entrada do card, erros)
+- Mantém o core intacto, só adiciona polimento visual
+
+> Dica: Para testar uma branch localmente:
 ```bash
+git checkout main
+# ou
+git checkout pro-motion
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧰 Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Zod
+- react-hook-form
+- next-themes (dark mode)
+- (pro-motion) tw-animate-css
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Começando
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 1) Instalar dependências
+```bash
+npm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 2) Rodar em desenvolvimento
+```bash
+npm run dev
+```
 
-## Deploy on Vercel
+Abra: `http://localhost:3000`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🗺️ Rotas
+
+- `/login` — Login
+- `/register` — Cadastro
+- `/forgot` — Recuperar senha
+
+---
+
+## 🔧 Observações importantes
+
+### Server Actions (mock)
+Este template usa actions mock para simular autenticação.  
+Você pode substituir por:
+- NextAuth
+- Lucia
+- Supabase Auth
+- API própria
+- Firebase Auth
+
+As actions ficam em:
+```
+src/app/actions/auth.ts
+```
+
+### Validação
+Schemas Zod ficam em:
+```
+src/lib/validators/auth.ts
+```
+
+---
+
+## 📁 Estrutura do projeto
+
+```
+src/
+  app/
+    (auth)/
+      layout.tsx
+      login/page.tsx
+      register/page.tsx
+      forgot/page.tsx
+    actions/
+      auth.ts
+    layout.tsx
+    page.tsx
+    globals.css
+
+  components/
+    auth/
+      AuthShell.tsx
+      LoginForm.tsx
+      RegisterForm.tsx
+      ForgotForm.tsx
+    theme/
+      ThemeProvider.tsx
+      ThemeToggle.tsx
+
+  lib/
+    validators/
+      auth.ts
+```
+
+---
+
+## 🧪 Qualidade (sugestão)
+Se você quiser deixar mais “produto” ainda:
+- ESLint + regras de import/ordenação
+- Prettier
+- Husky + lint-staged
+- CI básico no GitHub Actions (lint + build)
+
+---
+
+## 🛣️ Roadmap sugerido (para versão Pro)
+
+- [ ] Dashboard pós-login (sidebar + tabela + filtros)
+- [ ] Empty / Loading / Error states padronizados
+- [ ] Social login buttons (UI)
+- [ ] “Reset password” completo (UI + token flow)
+- [ ] Multi-tenant / org switch (UI)
+- [ ] Docs melhores + GIF demo no README
+- [ ] Página de marketing (landing do template)
+
+---
+
+## 📜 Licença
+
+Defina a licença conforme seu objetivo:
+- **MIT** (bom para open-source)
+- **Proprietária/Comercial** (bom para vender como template)
+
+> Se você pretende vender, recomendo manter uma versão “lite” MIT e a Pro com licença comercial.
+
+---
+
+## 🙌 Créditos
+
+UI baseada em shadcn/ui e Tailwind.  
+Template estruturado para ser simples de usar, fácil de evoluir e pronto para virar um produto.
